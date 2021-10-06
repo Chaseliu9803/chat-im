@@ -1,0 +1,9 @@
+.idea/
+#conf/*.local.yaml
+#conf/config.yaml
+#Makefile
+#vendor
+#.vscode/
+#.DS_Store
+#docs/*
+#script/email_
