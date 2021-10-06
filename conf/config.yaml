@@ -1,0 +1,8 @@
+port: 8080
+
+db:
+  drive_name: mysql
+  link: root:123456@(127.0.0.1:3306)/chat-im?charset=utf8
+  is_show_sql: true
+  max_connection: 20
+

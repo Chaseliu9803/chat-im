@@ -2,12 +2,16 @@ package main
 
 import (
 	"chat-im/controller"
+	"chat-im/setup"
+	"fmt"
 	"html/template"
 	"log"
 	"net/http"
+	"github.com/spf13/viper"
 )
 
 func main() {
+	setup.SetUpServer()
 	//绑定请求和处理函数
 	http.HandleFunc("/user/login", controller.Login)
 
@@ -28,7 +32,9 @@ func main() {
 	//解释所有模板，而不需要一个个解释
 	RegisterAllViews()
 
-	http.ListenAndServe(":8080", nil)
+	addr := ":"+viper.GetString("port")
+	fmt.Println("addr: ",addr)
+	http.ListenAndServe(addr, nil)
 }
 
 func RegisterAllViews() {
